@@ -1,0 +1,65 @@
+<div class="col-md-6 offset-md-3">
+  <div class="card card-container">
+      <div class="col-md-6 offset-md-3">
+          <h3>Create Teams</h3>
+          <form [formGroup]="saveteamform" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                  <label for="sport_name">Sport Name</label>
+                  <input formControlName="sport_name" type="text" class="form-control" id="sport_name" 
+                  name="sport_name" [(ngModel)]="teams.sport_name">
+              </div>
+
+              <div *ngIf=" f['sport_name'].touched && f['sport_name'].invalid" class="alert alert-danger">
+                <div *ngIf="f['sport_name'].errors && f['sport_name'].errors['required']">
+                    Sport Name is Required
+                </div>
+                <div *ngIf="f['sport_name'].errors && f['sport_name'].errors['minlength']">
+                    Minimum characters must be 3 characters
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="team_name">Team Name</label>
+                <input formControlName="team_name" type="text" class="form-control" id="team_name" 
+                name="team_name" [(ngModel)]="teams.team_name">
+              </div>
+
+            <div *ngIf=" f['team_name'].touched && f['team_name'].invalid" class="alert alert-danger">
+              <div *ngIf="f['team_name'].errors && f['team_name'].errors['required']">
+                  Team Name is Required
+              </div>
+              <div *ngIf="f['team_name'].errors && f['team_name'].errors['minlength']">
+                  Minimum characters must be 3 characters
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="city">City</label>
+              <input formControlName="city" type="text" class="form-control" id="city" 
+              name="city" [(ngModel)]="teams.city">
+            </div>
+
+            <div *ngIf=" f['city'].touched && f['city'].invalid" class="alert alert-danger">
+              <div *ngIf="f['city'].errors && f['city'].errors['required']">
+                City Name is Required
+            </div>
+            </div>
+
+            <div class="form-group">
+              <label for="country">Country</label>
+              <input formControlName="country" type="text" class="form-control" id="country" 
+              name="country" [(ngModel)]="teams.country">
+            </div>
+
+            <div *ngIf=" f['country'].touched && f['country'].invalid" class="alert alert-danger">
+              <div *ngIf="f['country'].errors && f['country'].errors['required']">
+                Country Name is Required
+            </div>
+            </div>
+            <br>
+            <button class="btn btn-success" type="submit">Submit</button>
+      
+          </form>
+      </div>
+    </div>
+</div>

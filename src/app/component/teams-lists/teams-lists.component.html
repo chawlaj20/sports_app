@@ -1,0 +1,25 @@
+<h2><u>Team List</u></h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Sport Name</th>
+            <th>Team Name</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let teams of teams">
+            <td>{{teams.team_id }}</td>
+            <td>{{teams.sport_name}}</td>
+            <td>{{teams.team_name}}</td>
+            <td>{{teams.city}}</td>
+            <td>{{teams.country}}</td>
+            <td><button class="btn btn-info">Edit</button></td>
+            <td><button class="btn btn-danger" (click)="deleteTeam(teams.team_id)">Delete</button></td>
+        </tr>
+    </tbody>
+    
+</table>
